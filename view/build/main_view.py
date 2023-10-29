@@ -46,7 +46,7 @@ class MainView(Observer):
         # Definindo um ícone personalizado para a janela
         # icon_path = self.relative_to_assets("win_logo.ico")
         # self.root.iconbitmap(icon_path)
-        
+
         # Definindo um ícone personalizado para a janela
         icon_photo = PhotoImage(file=self.relative_to_assets("win_logo.png"))
         self.root.iconphoto(False, icon_photo)
@@ -139,8 +139,46 @@ class MainView(Observer):
             activebackground="#117FE3",
         )
         button_4.place(x=615.0, y=95.0, width=161.0, height=41.0)
+
+        # Txt and Sound Mode
+        button_sound = PhotoImage(file=self.relative_to_assets(path="sound.png"))
+        button_txt = PhotoImage(file=self.relative_to_assets(path="txt.png"))
+        self.img_button_mode = [button_sound, button_txt]
+        currentImage = self.mpc.getMode()
+
+        self.button_sound_1 = Button(
+            image=self.img_button_mode[currentImage],
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: self.changeMode(),
+            relief="flat",
+            activebackground="#117FE3",
+        )
+        self.button_sound_1.place(x=615.0, y=266.0, width=154.0, height=44.0)
+
+        # -------------------------
+
         self.root.resizable(False, False)
         self.root.mainloop()
+
+    def change_image(self):
+        currentImage = self.mpc.getMode()
+        print(currentImage)
+
+        self.button_sound_1.destroy()
+        self.button_sound_1 = Button(
+            image=self.img_button_mode[currentImage],
+            borderwidth=0,
+            highlightthickness=0,
+            command=lambda: self.changeMode(),
+            relief="flat",
+            activebackground="#117FE3",
+        )
+        self.button_sound_1.place(x=615.0, y=266.0, width=154.0, height=44.0)
+    
+    def changeMode(self):
+        self.mpc.changeMode()
+        self.change_image()        
 
     def set_appwindow(self, root):
         hwnd = windll.user32.GetParent(root.winfo_id())
@@ -162,9 +200,15 @@ class MainView(Observer):
     def relative_to_assets(self, path: str) -> Path:
         return self.ASSETS_PATH / Path(path)
 
-    def update(self):
-        image_image_2 = PhotoImage(file=self.relative_to_assets("image_2.png"))
+    def update(self, mode=None):
+        
+        if mode is not None:
+            self.change_image()
+        else:
+            image_image_2 = PhotoImage(file=self.relative_to_assets("image_2.png"))
 
-        if self.cv.getCanvaFrame():
-            self.cv.clearCards()
-        self.cv.create_card(self.mpc, self.mpc.loadSong(), image_image_2)
+            if self.cv.getCanvaFrame():
+                self.cv.clearCards()
+            self.cv.create_card(self.mpc, self.mpc.loadSong(), image_image_2)
+
+        

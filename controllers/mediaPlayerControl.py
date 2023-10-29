@@ -50,8 +50,8 @@ class MediaPlayerControl:
         #     songModel[0].keybind, lambda: self.model.playSong(songModel.name)
         # )
 
-    "1 - Carrega os dados persistidos no arquivo de texto"
-    "2 - Retorna as musicas ja carregadas no sistema"
+    """1 - Carrega os dados persistidos no arquivo de texto"""
+    """2 - Retorna as musicas ja carregadas no sistema"""
 
     def loadSong(self, listSongModel=None):
         if listSongModel:
@@ -62,3 +62,12 @@ class MediaPlayerControl:
     # persisitir sons já adicionados
     def persistAddedSongs(self):
         self.fileControl.saveInFile(self.model.get_dic_songs())
+
+    def changeMode(self):
+        """Mode 0: Song"""
+        """ Mode 1: Txt  """
+
+        self.model.changeMode()
+
+    def getMode(self):
+        return self.model.getMode()

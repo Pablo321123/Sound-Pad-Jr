@@ -3,3 +3,9 @@ Muzy_fake_naty.mp3:60.02938775510204:6:D:/Projetos/Python/5 - SoundPad Jr/audio/
 Quem_voce_pensa_que_eh.mp3:10.631836734693877:7:D:/Projetos/Python/5 - SoundPad Jr/audio/Quem_voce_pensa_que_eh.mp3:
 SR-Cristiano-Ronaldo.wav:26.865487528344673:8:D:/Projetos/Python/5 - SoundPad Jr/audio/SR-Cristiano-Ronaldo.wav:
 o-sonho-do-Hexa-está-adiado.wav:9.47374149659864:9:D:/Projetos/Python/5 - SoundPad Jr/audio/o-sonho-do-Hexa-está-adiado.wav:
+Grupo-Só-Alegria-Jorge-Bagre.mp3:171.67673469387756:J:D:/Vídeos/Audios/Grupo-Só-Alegria-Jorge-Bagre.mp3:
+Bem-amigos-Terminou-_futebol.mp3:16.35265306122449:0:D:/Vídeos/Audios/Bem-amigos-Terminou-_futebol.mp3:
+Ele-fez-de-novo.mp3:7.758367346938775:N:D:/Vídeos/Audios/Ele-fez-de-novo.mp3:
+TÁ-PORRA-MENOR.mp3:2.7689795918367346:K:D:/Vídeos/Audios/TÁ-PORRA-MENOR.mp3:
+The-Boys-Capitão-Pátria_.mp3:9.900408163265306:I:D:/Vídeos/Audios/The-Boys-Capitão-Pátria_.mp3:
+um-homem-uma-besta-enjaulada.mp3:21.76:O:D:/Vídeos/Audios/um-homem-uma-besta-enjaulada.mp3:
