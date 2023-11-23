@@ -28,7 +28,7 @@ class MediaPlayerModel(Observer):
         self.mode = 0
         mixer.init(devicename="CABLE Input (VB-Audio Virtual Cable)")
 
-        keyboard.add_hotkey("*", self.changeMode)
+        keyboard.add_hotkey('ctrl + m', self.changeMode)
         # self.getAudioDevices(self)
 
     def playSong(self, songName: str):
@@ -58,7 +58,7 @@ class MediaPlayerModel(Observer):
         self.removeKeyBind(songName)
 
         self.dic_songs[songName].keybind = key.upper()
-        keyboard.add_hotkey(key, function)
+        keyboard.add_hotkey(key.upper(), function)
         self.subject.notifyAllObservers()
 
     def addMusic(self, path):
